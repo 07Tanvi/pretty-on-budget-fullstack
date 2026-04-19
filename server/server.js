@@ -1,9 +1,14 @@
 const express = require("express");
 const cors = require("cors");
+const path = require("path");
 
 const app = express();
+
 app.use(cors());
 app.use(express.json());
+
+// 👉 VERY IMPORTANT LINE (frontend serve karega)
+app.use(express.static(path.join(__dirname, "../public")));
 
 const products = {
   Oily: {
@@ -17,31 +22,13 @@ const products = {
       "Salicylic Serum",
       "Pond's Gel (₹150)"
     ]
-  },
-  Dry: {
-    morning: [
-      "Cetaphil Cleanser",
-      "Moisturizer",
-      "Sunscreen"
-    ],
-    night: [
-      "Cleanser",
-      "Hyaluronic Serum",
-      "Moisturizer"
-    ]
   }
 };
 
 app.post("/get-plan", (req, res) => {
   try {
     const { skin } = req.body;
-
-    const plan = products[skin];
-
-    if (!plan) {
-      return res.status(400).json({ error: "Invalid skin type" });
-    }
-
+    const plan = products[skin] || products["Oily"];
     res.json({ plan });
   } catch (err) {
     res.status(500).json({ error: "Server error" });
