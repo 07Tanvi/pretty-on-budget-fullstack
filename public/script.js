@@ -21,18 +21,20 @@ async function getPlan() {
     const data = await res.json();
 
     document.getElementById("result").innerHTML = `
-      <h3>✨ Hey ${name}</h3>
+  <div class="result-card">
+    <h3>✨ Hey ${name}</h3>
 
-      <div class="section">
-        🌞 <b>Morning</b><br>
-        ${data.plan.morning.join("<br>")}
-      </div>
+    <div class="section">
+      <h4>🌞 Morning</h4>
+      <p>${data.plan.morning.join("<br>")}</p>
+    </div>
 
-      <div class="section">
-        🌙 <b>Night</b><br>
-        ${data.plan.night.join("<br>")}
-      </div>
-    `;
+    <div class="section">
+      <h4>🌙 Night</h4>
+      <p>${data.plan.night.join("<br>")}</p>
+    </div>
+  </div>
+`;
   } catch (err) {
     console.log(err);
     alert("Server error 😭");
