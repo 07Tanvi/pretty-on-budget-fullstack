@@ -1,28 +1,78 @@
-body{
-    font-family: Arial;
-    background: linear-gradient(135deg,#ffe6f2,#e6ccff);
-    text-align:center;
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #f3d9ff, #e0c3fc);
+
+  display: flex;
+  flex-direction: column;   /* IMPORTANT */
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
-.container{
-    background:white;
-    width:350px;
-    margin:40px auto;
-    padding:20px;
-    border-radius:15px;
+/* MAIN CARD */
+.container {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(15px);
+  padding: 30px;
+  border-radius: 20px;
+  width: 350px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-input, select{
-    width:100%;
-    padding:10px;
-    margin:10px 0;
+/* HEADINGS */
+h1 {
+  margin-bottom: 20px;
+  color: #6a0dad;
+  text-align: center;
+}
+h2 {
+  text-align: center;
+  color: #6a0dad;
+  margin-bottom: 20px;
 }
 
-button{
-    padding:10px;
-    width:100%;
-    background:#ff66b2;
-    color:white;
-    border:none;
-    border-radius:8px;
+/* INPUTS */
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0 15px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: #f5e6ff;
+}
+
+/* BUTTON */
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(45deg, #ff6ec4, #7873f5);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+/* RESULT CARD */
+#result {
+  margin-top: 20px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+/* SECTIONS */
+.section {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background: #f9f0ff;
 }
