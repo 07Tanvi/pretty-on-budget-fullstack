@@ -3,7 +3,7 @@ async function getPlan() {
   const skin = document.getElementById("skin").value;
   const budget = document.getElementById("budget").value;
   const issue = document.getElementById("issue").value;
-
+  showQuote();
   if (!name || !budget || !issue) {
     alert("Please fill all fields!");
     return;
@@ -19,19 +19,18 @@ async function getPlan() {
     });
 
     const data = await res.json();
-
-    document.getElementById("result").innerHTML = `
+document.getElementById("result").innerHTML = `
   <div class="result-card">
     <h3>✨ Hey ${name}</h3>
 
-    <div class="section">
+    <div class="plan-box">
       <h4>🌞 Morning</h4>
-      <p>${data.plan.morning.join("<br>")}</p>
+      ${data.plan.morning.map(item => `<div class="item">🧴 ${item}</div>`).join("")}
     </div>
 
-    <div class="section">
+    <div class="plan-box">
       <h4>🌙 Night</h4>
-      <p>${data.plan.night.join("<br>")}</p>
+      ${data.plan.night.map(item => `<div class="item">🌸 ${item}</div>`).join("")}
     </div>
   </div>
 `;
@@ -39,4 +38,16 @@ async function getPlan() {
     console.log(err);
     alert("Server error 😭");
   }
+}
+const quotes = [
+  "Glow different 💖",
+  "You are your best investment ✨",
+  "Self-care is not selfish 🌸",
+  "Healthy skin = happy you 💅",
+  "Confidence looks good on you 💜"
+];
+
+function showQuote() {
+  const random = quotes[Math.floor(Math.random() * quotes.length)];
+  document.getElementById("quote").innerText = random;
 }

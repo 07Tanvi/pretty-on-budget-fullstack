@@ -175,3 +175,47 @@ button:hover {
 .section h4 {
   color: #9d4edd;
 }
+.title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #ff6ec4, #7873f5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 20px;
+}
+body::before {
+  content: "🌸 💖 ✨ 🧴 💅 🌷";
+  position: absolute;
+  font-size: 40px;
+  opacity: 0.2;
+  top: 10%;
+  left: 10%;
+}
+body::after {
+  content: "💜 ✨ 🦋 🌸 💖";
+  position: absolute;
+  font-size: 40px;
+  opacity: 0.2;
+  bottom: 10%;
+  right: 10%;
+}
+#quote {
+  margin-top: 10px;
+  text-align: center;
+  color: #7b2cbf;
+  font-style: italic;
+}
+.plan-box {
+  background: #fff0f6;
+  padding: 10px;
+  border-radius: 12px;
+  margin-top: 10px;
+}
+
+.item {
+  background: white;
+  margin: 5px 0;
+  padding: 8px;
+  border-radius: 8px;
+}
