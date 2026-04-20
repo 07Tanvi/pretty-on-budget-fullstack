@@ -219,3 +219,25 @@ body::after {
   padding: 8px;
   border-radius: 8px;
 }
+.stickers span {
+  position: absolute;
+  font-size: 28px;
+  opacity: 0.15;
+  animation: float 6s infinite ease-in-out;
+}
+
+.stickers span:nth-child(1) { top: 10%; left: 5%; }
+.stickers span:nth-child(2) { top: 20%; right: 10%; }
+.stickers span:nth-child(3) { top: 50%; left: 8%; }
+.stickers span:nth-child(4) { bottom: 15%; right: 5%; }
+.stickers span:nth-child(5) { bottom: 25%; left: 15%; }
+.stickers span:nth-child(6) { top: 70%; right: 20%; }
+.stickers span:nth-child(7) { top: 35%; left: 80%; }
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+opacity: 0.1;
+.stickers span:nth-child(3) { font-size: 35px; }
+.stickers span:nth-child(6) { font-size: 22px; }
