@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Glow Tracker ✨</title>
+
+  <link rel="stylesheet" href="tracker.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- floating glow circles -->
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+
+  <div class="tracker-container">
+
+    <h1>Glow Tracker ✨</h1>
+
+    <p class="subtitle">
+      small habits create big glow 💜
+    </p>
+
+    <!-- checklist section -->
+
+    <div class="tracker-card">
+
+      <h3>🌸 Today's Self-Care Checklist</h3>
+
+      <label>
+        <input type="checkbox">
+        Drank enough water 💧
+      </label>
+
+      <label>
+        <input type="checkbox">
+        Applied sunscreen ☀️
+      </label>
+
+      <label>
+        <input type="checkbox">
+        Followed skincare routine 🧴
+      </label>
+
+      <label>
+        <input type="checkbox">
+        Ate healthy meals 🥗
+      </label>
+
+      <label>
+        <input type="checkbox">
+        Slept properly 😴
+      </label>
+
+    </div>
+
+    <!-- notes section -->
+
+    <div class="tracker-card">
+
+      <h3>📝 Daily Skin Notes</h3>
+
+      <textarea
+        id="notes"
+        placeholder="Write how your skin felt today..."
+      ></textarea>
+
+      <button onclick="saveNotes()">
+        Save Notes 💖
+      </button>
+
+      <p id="saved-msg"></p>
+
+    </div>
+
+    <!-- motivational card -->
+
+    <div class="tracker-card quote-card">
+
+      <h3>✨ Glow Reminder</h3>
+
+      <p>
+        Healing takes time 🌸
+      </p>
+
+      <p>
+        Beauty starts from within 💖
+      </p>
+
+      <p>
+        Progress over perfection ✨
+      </p>
+
+    </div>
+
+    <!-- back button -->
+
+    <a href="index.html">
+      <button class="back-btn">
+        ← Back to Planner
+      </button>
+    </a>
+
+  </div>
+
+  <script src="tracker.js"></script>
+
+</body>
+</html>

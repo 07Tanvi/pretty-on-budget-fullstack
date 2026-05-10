@@ -1,49 +1,82 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>✨ Pretty On Budget 💖</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Pretty On Budget</title>
+
+  <link rel="stylesheet" href="style.css"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-<h1>✨ Pretty On Budget 💖</h1>
+  <!-- glow sparkles -->
+  <div class="sparkle sparkle1"></div>
+  <div class="sparkle sparkle2"></div>
+  <div class="sparkle sparkle3"></div>
+  <div class="sparkle sparkle4"></div>
 
-<div class="container">
+  <div class="container">
 
-    <label>Name</label>
-    <input type="text" id="name">
+    <h1 class="title">Pretty On Budget ✨</h1>
 
-    <label>Skin Type</label>
+    <p class="subtitle">
+      your personal skincare planner 💜
+    </p>
+
+    <!-- NAME -->
+    <input
+      type="text"
+      id="name"
+      placeholder="Enter your name"
+    />
+
+    <!-- SKIN TYPE -->
     <select id="skin">
-        <option>Oily</option>
-        <option>Dry</option>
-        <option>Combination</option>
-        <option>Sensitive</option>
+      <option value="Oily">Oily Skin</option>
+      <option value="Dry">Dry Skin</option>
+      <option value="Combination">Combination Skin</option>
+      <option value="Sensitive">Sensitive Skin</option>
     </select>
 
-    <label>Budget (₹)</label>
-    <input type="number" id="budget">
+    <!-- BUDGET -->
+    <input
+      type="number"
+      id="budget"
+      placeholder="Enter your budget"
+    />
 
-    <label>Skin Issue</label>
-    <input type="text" id="issue">
+    <!-- ISSUE -->
+    <input
+      type="text"
+      id="issue"
+      placeholder="Skin concern (acne, dullness etc.)"
+    />
 
-    <button onclick="getPlan()">Show My Plan ✨</button>
-    <p id="quote"></p> 
+    <!-- BUTTON -->
+    <button onclick="getPlan()">
+      Show My Plan 💖
+    </button>
+
+    <!-- RESULT -->
     <div id="result"></div>
-    <div class="stickers">
-  <span>🌸</span>
-  <span>💖</span>
-  <span>✨</span>
-  <span>🧴</span>
-  <span>💅</span>
-  <span>🌷</span>
-  <span>🦋</span>
-</div>
+    <a href="tracker.html">
 
-</div>
+  <button class="tracker-btn">
+    ✨ Open Glow Tracker
+  </button>
 
-<script src="script.js"></script>
+</a>
+
+  </div>
+
+  <script src="script.js"></script>
 
 </body>
 </html>
