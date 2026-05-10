@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
-const mongoose = require("mongoose");
+
 
 const app = express();
 
@@ -13,9 +13,11 @@ app.use(express.static(path.join(__dirname, "../public")));
 
 
 // ✅ MongoDB CONNECT (FINAL)
-mongoose.connect("mongodb+srv://tanvi:tanvi0708@cluster0.bsmn5dd.mongodb.net/beautyDB?retryWrites=true&w=majority")
-.then(() => console.log("MongoDB Connected ✅"))
-.catch(err => console.log("MongoDB Error ❌", err));
+const mongoose = require("mongoose");
+
+mongoose.connect("mongodb://127.0.0.1:27017/beautyDb")
+  .then(() => console.log("MongoDB Connected ✅"))
+  .catch(err => console.log(err));
 
 
 // ✅ Schema
@@ -50,19 +52,16 @@ app.post("/get-plan", async (req, res) => {
   try {
     const { skin } = req.body;
 
-    let plan = await Plan.findOne({ skin });
+    const plan = products[skin] || products["Oily"];
 
-    if (!plan) {
-      const defaultPlan = products[skin] || products["Oily"];
+    // 👉 SAVE IN DATABASE
+    const newPlan = new Plan({
+      skin: skin,
+      morning: plan.morning,
+      night: plan.night
+    });
 
-      plan = new Plan({
-        skin,
-        morning: defaultPlan.morning,
-        night: defaultPlan.night
-      });
-
-      await plan.save();
-    }
+    await newPlan.save();
 
     res.json({ plan });
 
@@ -71,7 +70,6 @@ app.post("/get-plan", async (req, res) => {
     res.status(500).json({ error: "Server error" });
   }
 });
-
 
 // ✅ Start server
 app.listen(5000, () => {
